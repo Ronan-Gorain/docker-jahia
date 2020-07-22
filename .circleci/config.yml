@@ -274,6 +274,9 @@ jobs:
     <<: *job_def_param
     docker:
       - image: jahia/jahia_test:8.0.0.0_fs<< parameters.suffixend >>
+        auth:
+          username: $DOCKER_LOGIN
+          password: $DOCKER_PASSWORD
         <<: *environment_jahia
       - <<: *db_container
     steps:
@@ -303,6 +306,9 @@ jobs:
     <<: *job_def_param
     docker:
       - image: jahia/jahia_test:7.3.5.0<< parameters.suffixend >>
+        auth:
+          username: $DOCKER_LOGIN
+          password: $DOCKER_PASSWORD
         <<: *environment_jahia
       - <<: *db_container
     steps:
@@ -332,6 +338,9 @@ jobs:
     <<: *job_def_param
     docker:
       - image: jahia/jahia_test:7.3.4.1<< parameters.suffixend >>
+        auth:
+          username: $DOCKER_LOGIN
+          password: $DOCKER_PASSWORD
         <<: *environment_jahia
       - <<: *db_container
     steps:
