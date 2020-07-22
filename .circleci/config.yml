@@ -138,7 +138,7 @@ commands:
         default: jahia/jahia
       repo_source:
         type: string
-        default: jahia/build2test
+        default: jahia/jahia_test
       jver:
         type: string
       tag_suffix:
@@ -241,7 +241,7 @@ jobs:
   test_8000:
     <<: *job_def_param
     docker:
-      - image: jahia/build2test:8.0.0.0<< parameters.suffixend >>
+      - image: jahia/jahia_test:8.0.0.0<< parameters.suffixend >>
         <<: *environment_jahia
       - <<: *db_container
     steps:
@@ -270,7 +270,7 @@ jobs:
   test_8000_fs:
     <<: *job_def_param
     docker:
-      - image: jahia/build2test:8.0.0.0_fs<< parameters.suffixend >>
+      - image: jahia/jahia_test:8.0.0.0_fs<< parameters.suffixend >>
         <<: *environment_jahia
       - <<: *db_container
     steps:
@@ -299,7 +299,7 @@ jobs:
   test_7350:
     <<: *job_def_param
     docker:
-      - image: jahia/build2test:7.3.5.0<< parameters.suffixend >>
+      - image: jahia/jahia_test:7.3.5.0<< parameters.suffixend >>
         <<: *environment_jahia
       - <<: *db_container
     steps:
@@ -328,7 +328,7 @@ jobs:
   test_7341:
     <<: *job_def_param
     docker:
-      - image: jahia/build2test:7.3.4.1<< parameters.suffixend >>
+      - image: jahia/jahia_test:7.3.4.1<< parameters.suffixend >>
         <<: *environment_jahia
       - <<: *db_container
     steps:
