@@ -80,7 +80,6 @@ commands:
         type: string
         default: ""
     steps:
-      - setup_remote_docker
       - run:
           name: import db schema
           command: |
@@ -243,6 +242,9 @@ jobs:
     <<: *job_def_param
     docker:
       - image: jahia/jahia_test:8.0.0.0<< parameters.suffixend >>
+        auth:
+          username: $DOCKER_LOGIN
+          password: $DOCKER_PASSWORD
         <<: *environment_jahia
       - <<: *db_container
     steps:
