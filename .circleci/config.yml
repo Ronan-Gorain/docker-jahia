@@ -80,6 +80,7 @@ commands:
         type: string
         default: ""
     steps:
+      - setup_remote_docker
       - run:
           name: import db schema
           command: |
